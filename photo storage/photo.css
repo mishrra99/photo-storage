@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Light background for contrast */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, #6a5acd, #8a2be2); /* Gradient header */
+    color: white;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem; /* Larger header font size */
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px; /* Center the main content */
+    margin: auto;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 15px; /* Space between header and nav */
+}
+
+nav ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the navigation items */
+}
+
+nav ul li {
+    margin: 0 15px; /* Space between navigation items */
+}
+
+nav ul li a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Font size for links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: #f0f4f8; /* Change link color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+.upload-section {
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="file"] {
+    margin: 10px 0;
+    padding: 15px;
+    width: calc(100% - 30px);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    border-color: #8a2be2; /* Focus color */
+    outline: none;
+}
+
+button {
+    padding: 15px 25px;
+    background-color: #8a2be2; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #6a5acd; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+#photoGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.photo-item {
+    display: inline-block;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    /* border-radius: 15px 15px 0 0; */
+    border-radius: 5px;
+     /* Rounded corners for the image */
+    display: block; /* Ensures images are block-level */
+}
+.cover-photo {
+            width: 45%; /* Cover the full width of the sortlist */
+            height :50%; /* Maintain aspect ratio */
+            border-radius: 5%;
+            object-fit:cover; /* Ensure the image covers the area without distortion */
+            margin-bottom: 10px; /* Space between cover photo and sortlist title */
+        }
+.tooltip {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the tooltip */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    opacity: 0; /* Start with opacity 0 */
+}
+.photo-item .tooltip {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the tooltip */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    opacity: 0; /* Start with opacity 0 */
+}
+
+.photo-item:hover .tooltip {
+    display: block; /* Show on hover */
+    opacity: 1; /* Fade in */
+}
+
+.sortlist-title {
+    cursor: pointer;
+    font-size: 18px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.sortlist-photos {
+    display: none; /* Initially hide the photos */
+    margin-left: 20px; /* Indent photos under the sortlist */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #6a5acd; /* Footer background color */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+@keyframes move {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Apply animation to the emoji */
+  .moving-emoji {
+    display: inline-block;
+    font-size: 30px; /* Adjust size as needed */
+    animation: move 2s infinite; /* 2 seconds, looping forever */
+  }

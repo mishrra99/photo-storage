@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Upload Gallery</title>
+    <link rel="stylesheet" href="photo.css">  
+    <script src="server.js"></script>  
+</head>
+<body>
+    <header>
+        <h1>Find Hot LPU Vertos &#x1F525;</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="uses.html">How to Use</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="upload-section">
+            <input type="text" id="userName" placeholder="Secret Key i.e.(xyz,0-9,any words)" required>
+            <input type="text" id="instagramId" placeholder="Instagram ID" required>
+            <input type="text" id="sortlistInput" placeholder="Sortlist Name" required>
+            <input type="file" id="photoInput" accept="image/*" required>
+            <button id="uploadButton">Upload Photo&#x1F4E4;</button>
+        </section>
+        <div class="gallery">
+            <h2>Find them here&#x1F447;</h2>
+            <div id="photoGallery"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Photo Upload Gallery</p>
+        <p>Relax...your data will not store<span class="moving-emoji">🖐😌</span></p>
+    </footer>
+    <script src="photo.js"></script>
+</body>
+</html>
